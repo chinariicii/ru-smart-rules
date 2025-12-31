@@ -30,9 +30,9 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          # 强制添加到暂存区（不管 dist 是否存在）
-          git add -A dist/
-          # 只有当有变化时才提交
+          # 关键修改：使用 -f 强制添加，防止被 .gitignore 拦截
+          git add -f dist/
+          # 检查是否有变化需要提交
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
