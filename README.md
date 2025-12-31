@@ -14,10 +14,10 @@ This project automatically fetches data from the upstream whitelist and converts
 
 | 工具 (Tool) | 链接 (Link) |
 | :--- | :--- |
-| **Surge 俄罗斯常用域名** | `https://raw.githubusercontent.com/chinariicii/ru-smart-rules/refs/heads/main/dist/surge/ru_whitelist_domains.list` |
-| **Surge 俄罗斯IP** | `https://raw.githubusercontent.com/chinariicii/ru-smart-rules/refs/heads/main/dist/surge/ru_whitelist_cidrs.list` |
-| **Loon 俄罗斯常用域名** | `https://raw.githubusercontent.com/chinariicii/ru-smart-rules/refs/heads/main/dist/loon/ru_whitelist_domains.list` |
-| **Loon 俄罗斯IP** | `https://raw.githubusercontent.com/chinariicii/ru-smart-rules/refs/heads/main/dist/loon/ru_whitelist_cidrs.list` |
+| **Surge 俄罗斯常用域名** | `https://raw.githubusercontent.com/chinariicii/ru-smart-rules/main/dist/surge/ru_whitelist_domains.list` |
+| **Surge 俄罗斯IP** | `https://raw.githubusercontent.com/chinariicii/ru-smart-rules/main/dist/surge/ru_whitelist_cidrs.list` |
+| **Loon 俄罗斯常用域名** | `https://raw.githubusercontent.com/chinariicii/ru-smart-rules/main/dist/loon/ru_whitelist_domains.list` |
+| **Loon 俄罗斯IP** | `https://raw.githubusercontent.com/chinariicii/ru-smart-rules/main/dist/loon/ru_whitelist_cidrs.list` |
 
 
 
