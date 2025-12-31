@@ -1,154 +1,60 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-from __future__ import annotations
-import os
 import re
-import sys
 import urllib.request
-from datetime import datetime, timezone
+from pathlib import Path
 
 DOMAINS_URL = "https://raw.githubusercontent.com/hxehex/russia-mobile-internet-whitelist/main/whitelist.txt"
-CIDR_URL = "https://raw.githubusercontent.com/hxehex/russia-mobile-internet-whitelist/main/cidrwhitelist.txt"
+CIDR_URL    = "https://raw.githubusercontent.com/hxehex/russia-mobile-internet-whitelist/main/cidrwhitelist.txt"
 
-OUT_DIR = "dist"
-SURGE_DIR = os.path.join(OUT_DIR, "surge")
-LOON_DIR = os.path.join(OUT_DIR, "loon")
+OUT_DIR = Path("dist")
+OUT_DOMAINS = OUT_DIR / "ru-direct-domains.list"
+OUT_CIDR    = OUT_DIR / "ru-direct-cidr.list"
 
-COMMENT_PREFIXES = ("#", "//", ";")
+def fetch(url: str) -> str:
+    with urllib.request.urlopen(url, timeout=20) as r:
+        return r.read().decode("utf-8", errors="ignore")
 
-DOMAIN_RE = re.compile(r"^(?=.{1,253}$)(?!-)[A-Za-z0-9-]{1,63}(?<!-)(\.(?!-)[A-Za-z0-9-]{1,63}(?<!-))+$")
-
-def fetch_text(url: str) -> str:
-    req = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": "ru-smart-rules-bot/1.0 (+github actions)"
-        },
-    )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read().decode("utf-8", errors="replace")
-
-def clean_lines(text: str) -> list[str]:
-    lines: list[str] = []
-    for raw in text.splitlines():
-        s = raw.strip()
-        if not s:
+def clean_lines(text: str):
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or line.startswith("//"):
             continue
-        if s.startswith(COMMENT_PREFIXES):
-            continue
-        # 去掉行内注释（保守：只处理 # 之后）
-        if "#" in s:
-            s = s.split("#", 1)[0].strip()
-        if not s:
-            continue
-        lines.append(s)
-    return lines
+        yield line
 
-def normalize_domain(s: str) -> str | None:
-    s = s.strip()
-    if not s:
+def normalize_domain(d: str) -> str | None:
+    d = d.strip().lower()
+    d = re.sub(r"^https?://", "", d)
+    d = d.split("/")[0]
+    d = d.split(":")[0]
+    d = d.lstrip(".")
+    # 非法的直接丢掉
+    if not d or " " in d or d.count(".") == 0:
         return None
+    return d
 
-    # 如果上游有写协议/路径，裁掉
-    s = re.sub(r"^https?://", "", s, flags=re.I)
-    s = s.split("/", 1)[0].strip()
+def main():
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 去掉端口
-    if ":" in s and not re.match(r"^\[.*\]$", s):
-        host, maybe_port = s.rsplit(":", 1)
-        if maybe_port.isdigit():
-            s = host
+    domains_src = fetch(DOMAINS_URL)
+    cidr_src = fetch(CIDR_URL)
 
-    # 去掉前导点、通配
-    s = s.lstrip(".")
-    if s.startswith("*."):
-        s = s[2:]
-
-    s = s.lower().strip()
-    if not s:
-        return None
-
-    # 排除明显不是域名的
-    if "/" in s or " " in s:
-        return None
-    if re.match(r"^\d{1,3}(\.\d{1,3}){3}$", s):
-        return None
-
-    # 基本域名校验（允许 punycode）
-    if DOMAIN_RE.match(s) or s.startswith("xn--"):
-        return s
-
-    return None
-
-def normalize_cidr(s: str) -> str | None:
-    s = s.strip()
-    if not s:
-        return None
-    # 去掉尾部注释/多余字段
-    s = s.split(",", 1)[0].strip()
-    s = s.split(" ", 1)[0].strip()
-    if not s:
-        return None
-    # 简单校验 CIDR
-    if re.match(r"^\d{1,3}(\.\d{1,3}){3}/\d{1,2}$", s):
-        return s
-    return None
-
-def write_file(path: str, lines: list[str]) -> None:
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8", newline="\n") as f:
-        f.write("\n".join(lines).rstrip() + "\n")
-
-def header(title: str, source: str) -> list[str]:
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ")
-    return [
-        f"# {title}",
-        f"# Generated at: {now}",
-        f"# Source: {source}",
-        "#",
-    ]
-
-def main() -> int:
-    domains_txt = fetch_text(DOMAINS_URL)
-    cidr_txt = fetch_text(CIDR_URL)
-
-    domains_raw = clean_lines(domains_txt)
-    cidr_raw = clean_lines(cidr_txt)
-
-    domains: list[str] = []
-    for s in domains_raw:
-        d = normalize_domain(s)
+    domains = []
+    for raw in clean_lines(domains_src):
+        d = normalize_domain(raw)
         if d:
-            domains.append(d)
+            # 一行一个域名 -> 用 DOMAIN-SUFFIX 覆盖子域
+            domains.append(f"DOMAIN-SUFFIX,{d}")
 
-    cidrs: list[str] = []
-    for s in cidr_raw:
-        c = normalize_cidr(s)
-        if c:
-            cidrs.append(c)
+    cidrs = []
+    for raw in clean_lines(cidr_src):
+        raw = raw.split("#")[0].strip()
+        if raw:
+            cidrs.append(f"IP-CIDR,{raw}")
 
-    # 去重排序
-    domains = sorted(set(domains))
-    cidrs = sorted(set(cidrs))
+    OUT_DOMAINS.write_text("\n".join(sorted(set(domains))) + "\n", encoding="utf-8")
+    OUT_CIDR.write_text("\n".join(sorted(set(cidrs))) + "\n", encoding="utf-8")
 
-    # 输出：Surge
-    surge_domains = header("RU Direct Domains (Surge)", DOMAINS_URL) + [f"DOMAIN-SUFFIX,{d}" for d in domains]
-    surge_cidrs = header("RU Direct CIDRs (Surge)", CIDR_URL) + [f"IP-CIDR,{c},no-resolve" for c in cidrs]
-
-    # 输出：Loon（Loon 也支持这套语法）
-    loon_domains = header("RU Direct Domains (Loon)", DOMAINS_URL) + [f"DOMAIN-SUFFIX,{d}" for d in domains]
-    loon_cidrs = header("RU Direct CIDRs (Loon)", CIDR_URL) + [f"IP-CIDR,{c},no-resolve" for c in cidrs]
-
-    write_file(os.path.join(SURGE_DIR, "ru_direct_domains.list"), surge_domains)
-    write_file(os.path.join(SURGE_DIR, "ru_direct_cidrs.list"), surge_cidrs)
-    write_file(os.path.join(LOON_DIR, "ru_direct_domains.list"), loon_domains)
-    write_file(os.path.join(LOON_DIR, "ru_direct_cidrs.list"), loon_cidrs)
-
-    print(f"Domains: {len(domains)}")
-    print(f"CIDRs:   {len(cidrs)}")
-    print("Done.")
-    return 0
+    print(f"OK: {OUT_DOMAINS} ({len(set(domains))})")
+    print(f"OK: {OUT_CIDR} ({len(set(cidrs))})")
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()
