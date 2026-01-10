@@ -292,6 +292,7 @@ DOMAIN-SUFFIX,dr2.yandex.net
 DOMAIN-SUFFIX,dragonpals.mail.ru
 DOMAIN-SUFFIX,ds.mail.ru
 DOMAIN-SUFFIX,duck.mail.ru
+DOMAIN-SUFFIX,duma.gov.ru
 DOMAIN-SUFFIX,dzen.ru
 DOMAIN-SUFFIX,e.mail.ru
 DOMAIN-SUFFIX,education.mail.ru
@@ -299,6 +300,7 @@ DOMAIN-SUFFIX,egress.yandex.net
 DOMAIN-SUFFIX,eh.vk.com
 DOMAIN-SUFFIX,ekmp-a-51.rzd.ru
 DOMAIN-SUFFIX,enterprise.api-maps.yandex.ru
+DOMAIN-SUFFIX,epp.genproc.gov.ru
 DOMAIN-SUFFIX,esa-res.online.sberbank.ru
 DOMAIN-SUFFIX,esc.predict.mail.ru
 DOMAIN-SUFFIX,esia.gosuslugi.ru
@@ -321,6 +323,7 @@ DOMAIN-SUFFIX,fw.wb.ru
 DOMAIN-SUFFIX,games-bamboo.mail.ru
 DOMAIN-SUFFIX,games-fisheye.mail.ru
 DOMAIN-SUFFIX,games.mail.ru
+DOMAIN-SUFFIX,gazeta.ru
 DOMAIN-SUFFIX,genesis.mail.ru
 DOMAIN-SUFFIX,geo-apart.predict.mail.ru
 DOMAIN-SUFFIX,gibdd.mail.ru
@@ -328,6 +331,7 @@ DOMAIN-SUFFIX,go.mail.ru
 DOMAIN-SUFFIX,golos.mail.ru
 DOMAIN-SUFFIX,gosuslugi.ru
 DOMAIN-SUFFIX,gosweb.gosuslugi.ru
+DOMAIN-SUFFIX,government.ru
 DOMAIN-SUFFIX,goya.rutube.ru
 DOMAIN-SUFFIX,gpb.finance.mail.ru
 DOMAIN-SUFFIX,graphql-web.kinopoisk.ru
@@ -388,6 +392,8 @@ DOMAIN-SUFFIX,kombo.mail.ru
 DOMAIN-SUFFIX,kombu.mail.ru
 DOMAIN-SUFFIX,kommba.mail.ru
 DOMAIN-SUFFIX,konflikt.mail.ru
+DOMAIN-SUFFIX,kp.ru
+DOMAIN-SUFFIX,kremlin.ru
 DOMAIN-SUFFIX,kz.mcs.mail.ru
 DOMAIN-SUFFIX,la.mail.ru
 DOMAIN-SUFFIX,lady.mail.ru
@@ -398,6 +404,7 @@ DOMAIN-SUFFIX,legal.max.ru
 DOMAIN-SUFFIX,legenda.mail.ru
 DOMAIN-SUFFIX,legendofheroes.mail.ru
 DOMAIN-SUFFIX,lemanapro.ru
+DOMAIN-SUFFIX,lenta.ru
 DOMAIN-SUFFIX,link.max.ru
 DOMAIN-SUFFIX,link.mp.rzd.ru
 DOMAIN-SUFFIX,live.ok.ru
@@ -447,6 +454,7 @@ DOMAIN-SUFFIX,minigames.mail.ru
 DOMAIN-SUFFIX,mking.mail.ru
 DOMAIN-SUFFIX,mobfarm.mail.ru
 DOMAIN-SUFFIX,money.mail.ru
+DOMAIN-SUFFIX,moskva.taximaxim.ru
 DOMAIN-SUFFIX,mosqa.mail.ru
 DOMAIN-SUFFIX,mowar.mail.ru
 DOMAIN-SUFFIX,mozilla.mail.ru
@@ -496,6 +504,7 @@ DOMAIN-SUFFIX,pets.mail.ru
 DOMAIN-SUFFIX,pic.rutubelist.ru
 DOMAIN-SUFFIX,pl-res.online.sberbank.ru
 DOMAIN-SUFFIX,pms.mail.ru
+DOMAIN-SUFFIX,pochta.ru
 DOMAIN-SUFFIX,pochtabank.mail.ru
 DOMAIN-SUFFIX,pogoda.mail.ru
 DOMAIN-SUFFIX,pokerist.mail.ru
@@ -521,7 +530,9 @@ DOMAIN-SUFFIX,queuev4.vk.com
 DOMAIN-SUFFIX,quiz.kinopoisk.ru
 DOMAIN-SUFFIX,r.vk.ru
 DOMAIN-SUFFIX,r0.mradx.net
+DOMAIN-SUFFIX,rambler.ru
 DOMAIN-SUFFIX,rate.mail.ru
+DOMAIN-SUFFIX,rbc.ru
 DOMAIN-SUFFIX,rebus.calls.mail.ru
 DOMAIN-SUFFIX,rebus.octavius.mail.ru
 DOMAIN-SUFFIX,receive-sentry.lmru.tech
@@ -640,6 +651,7 @@ DOMAIN-SUFFIX,travel.yandex.ru
 DOMAIN-SUFFIX,travel.yastatic.net
 DOMAIN-SUFFIX,trk.mail.ru
 DOMAIN-SUFFIX,ttbh.mail.ru
+DOMAIN-SUFFIX,tutu.ru
 DOMAIN-SUFFIX,tv.mail.ru
 DOMAIN-SUFFIX,typewriter.mail.ru
 DOMAIN-SUFFIX,u.corp.mail.ru
@@ -704,3 +716,4 @@ DOMAIN-SUFFIX,zen-yabro-morda.mediascope.mc.yandex.ru
 DOMAIN-SUFFIX,zen.yandex.com
 DOMAIN-SUFFIX,zen.yandex.net
 DOMAIN-SUFFIX,zen.yandex.ru
+DOMAIN-SUFFIX,честныйзнак.рф
