@@ -148,17 +148,23 @@ DOMAIN-SUFFIX,api.avito.ru
 DOMAIN-SUFFIX,api.browser.yandex.com
 DOMAIN-SUFFIX,api.browser.yandex.ru
 DOMAIN-SUFFIX,api.cs7777.vk.ru
+DOMAIN-SUFFIX,api.dobro.ru
 DOMAIN-SUFFIX,api.events.plus.yandex.net
+DOMAIN-SUFFIX,api.evotor.ru
+DOMAIN-SUFFIX,api.hrlink.ru
+DOMAIN-SUFFIX,api.lizaalert.org
 DOMAIN-SUFFIX,api.max.ru
 DOMAIN-SUFFIX,api.ok.ru
 DOMAIN-SUFFIX,api.photo.2gis.com
 DOMAIN-SUFFIX,api.plus.kinopoisk.ru
 DOMAIN-SUFFIX,api.predict.mail.ru
 DOMAIN-SUFFIX,api.reviews.2gis.com
+DOMAIN-SUFFIX,api.roskachestvo.gov.ru
 DOMAIN-SUFFIX,api.s3.yandex.net
 DOMAIN-SUFFIX,api.tau.vk.ru
 DOMAIN-SUFFIX,api.uxfeedback.yandex.net
 DOMAIN-SUFFIX,api.vk.ru
+DOMAIN-SUFFIX,app.hrlink.ru
 DOMAIN-SUFFIX,apps.research.mail.ru
 DOMAIN-SUFFIX,authdl.mail.ru
 DOMAIN-SUFFIX,auto.mail.ru
@@ -199,6 +205,7 @@ DOMAIN-SUFFIX,browser.mail.ru
 DOMAIN-SUFFIX,browser.yandex.com
 DOMAIN-SUFFIX,browser.yandex.ru
 DOMAIN-SUFFIX,business.vk.ru
+DOMAIN-SUFFIX,cabinet.evotor.ru
 DOMAIN-SUFFIX,calendar.mail.ru
 DOMAIN-SUFFIX,capsula.mail.ru
 DOMAIN-SUFFIX,cargo.rzd.ru
@@ -285,6 +292,7 @@ DOMAIN-SUFFIX,dmp.dmpkit.lemanapro.ru
 DOMAIN-SUFFIX,dn.mail.ru
 DOMAIN-SUFFIX,dnd.wb.ru
 DOMAIN-SUFFIX,dobro.mail.ru
+DOMAIN-SUFFIX,dobro.ru
 DOMAIN-SUFFIX,doc.mail.ru
 DOMAIN-SUFFIX,dom.mail.ru
 DOMAIN-SUFFIX,download.max.ru
@@ -307,6 +315,7 @@ DOMAIN-SUFFIX,esa-res.online.sberbank.ru
 DOMAIN-SUFFIX,esc.predict.mail.ru
 DOMAIN-SUFFIX,esia.gosuslugi.ru
 DOMAIN-SUFFIX,et.mail.ru
+DOMAIN-SUFFIX,evotor.ru
 DOMAIN-SUFFIX,expert.vk.ru
 DOMAIN-SUFFIX,external-api.mediabilling.kinopoisk.ru
 DOMAIN-SUFFIX,external-api.plus.kinopoisk.ru
@@ -347,6 +356,7 @@ DOMAIN-SUFFIX,help.mcs.mail.ru
 DOMAIN-SUFFIX,hi-tech.mail.ru
 DOMAIN-SUFFIX,horo.mail.ru
 DOMAIN-SUFFIX,hrc.tbank.ru
+DOMAIN-SUFFIX,hrlink.ru
 DOMAIN-SUFFIX,hs.mail.ru
 DOMAIN-SUFFIX,http-check-headers.yandex.ru
 DOMAIN-SUFFIX,i.max.ru
@@ -399,6 +409,7 @@ DOMAIN-SUFFIX,kremlin.ru
 DOMAIN-SUFFIX,kz.mcs.mail.ru
 DOMAIN-SUFFIX,la.mail.ru
 DOMAIN-SUFFIX,lady.mail.ru
+DOMAIN-SUFFIX,land.dobro.ru
 DOMAIN-SUFFIX,landing.mail.ru
 DOMAIN-SUFFIX,le.tbank.ru
 DOMAIN-SUFFIX,learning.ozon.ru
@@ -410,6 +421,7 @@ DOMAIN-SUFFIX,lenta.ru
 DOMAIN-SUFFIX,link.max.ru
 DOMAIN-SUFFIX,link.mp.rzd.ru
 DOMAIN-SUFFIX,live.ok.ru
+DOMAIN-SUFFIX,lizaalert.org
 DOMAIN-SUFFIX,lk.gosuslugi.ru
 DOMAIN-SUFFIX,loa.mail.ru
 DOMAIN-SUFFIX,log.strm.yandex.ru
@@ -482,7 +494,9 @@ DOMAIN-SUFFIX,oauth.cs7777.vk.ru
 DOMAIN-SUFFIX,oauth.tau.vk.ru
 DOMAIN-SUFFIX,oauth2.cs7777.vk.ru
 DOMAIN-SUFFIX,octavius.mail.ru
+DOMAIN-SUFFIX,ofd.ru
 DOMAIN-SUFFIX,oneclick-payment.kinopoisk.ru
+DOMAIN-SUFFIX,onf.ru
 DOMAIN-SUFFIX,online.sberbank.ru
 DOMAIN-SUFFIX,operator.mail.ru
 DOMAIN-SUFFIX,ord.ozon.ru
@@ -505,6 +519,7 @@ DOMAIN-SUFFIX,pernatsk.mail.ru
 DOMAIN-SUFFIX,pets.mail.ru
 DOMAIN-SUFFIX,pic.rutubelist.ru
 DOMAIN-SUFFIX,pl-res.online.sberbank.ru
+DOMAIN-SUFFIX,platform.ofd.ru
 DOMAIN-SUFFIX,pms.mail.ru
 DOMAIN-SUFFIX,pochta.ru
 DOMAIN-SUFFIX,pochtabank.mail.ru
@@ -543,6 +558,7 @@ DOMAIN-SUFFIX,rev.mail.ru
 DOMAIN-SUFFIX,riot.mail.ru
 DOMAIN-SUFFIX,rl.mail.ru
 DOMAIN-SUFFIX,rm.mail.ru
+DOMAIN-SUFFIX,roskachestvo.gov.ru
 DOMAIN-SUFFIX,rs.mail.ru
 DOMAIN-SUFFIX,rt.api.operator.mail.ru
 DOMAIN-SUFFIX,rutube.ru
@@ -839,6 +855,7 @@ DOMAIN-SUFFIX,vk.mail.ru
 DOMAIN-SUFFIX,vkdoc.mail.ru
 DOMAIN-SUFFIX,vkvideo.cs7777.vk.ru
 DOMAIN-SUFFIX,voina.mail.ru
+DOMAIN-SUFFIX,volunteer.lizaalert.org
 DOMAIN-SUFFIX,voter.gosuslugi.ru
 DOMAIN-SUFFIX,vt-1.ozone.ru
 DOMAIN-SUFFIX,wap.yandex.com
