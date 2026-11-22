@@ -1,0 +1,12 @@
+# 幸识历史流量域名后缀规则
+# 不包含策略，由导入后的 Loon 配置决定策略
+DOMAIN-SUFFIX,agora.io
+DOMAIN-SUFFIX,cijian.link
+DOMAIN-SUFFIX,fengkongcloud.com
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,rong-edge.com
+DOMAIN-SUFFIX,ronghub.com
+DOMAIN-SUFFIX,rongnav.com
+DOMAIN-SUFFIX,shuzilm.cn
+DOMAIN-SUFFIX,telecome.cn
+DOMAIN-SUFFIX,umeng.com
